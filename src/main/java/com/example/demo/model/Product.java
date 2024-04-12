@@ -2,24 +2,26 @@ package com.example.demo.model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product")
 public class Product {
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer productId;
 	private String productName;
 	private String description;
 	private double price;
 	private Date manufacturedDate;
-	
-	public Product() {}
+
+	public Product() {
+	}
+
 	public Product(int productId, String productName, String description, double price, Date manufacturedDate) {
 		super();
 		this.productId = productId;
@@ -68,6 +70,5 @@ public class Product {
 	public void setManufacturedDate(Date manufacturedDate) {
 		this.manufacturedDate = manufacturedDate;
 	}
-	
-	
-	}
+
+}
